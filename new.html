@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Nidusara Edirisinghe | Visual Storyteller & Creator</title>
+    <meta name="description" content="Portfolio of Nidusara Maneesha – Photographer, Gamer, Student, and Media Enthusiast from Sri Lanka.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #0b1120 0%, #0f172a 100%);
+            color: #f1f5f9;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38bdf8;
+            border-radius: 12px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7dd3fc;
+        }
+
+        .hero {
+            height: 100vh;
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBmaWxsPSIjMjIyYjM4IiBmaWxsLW9wYWNpdHk9IjAuMDYiIGQ9Ik0wIDBoNDB2NDBIMHoiLz48cGF0aCBkPSJNMjAgMjBhMTAgMTAgMCAwIDEgMjAgMCAxMCAxMCAwIDAgMS0yMCAweiIgZmlsbD0iIzFlMjkzYiIgZmlsbC1vcGFjaXR5PSIwLjA1Ii8+PC9zdmc+'), 
+            linear-gradient(135deg, #030712 0%, #111827 100%);
+            background-blend-mode: overlay;
+            background-size: 30px, cover;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.08) 0%, rgba(0,0,0,0.4) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(2,6,23,0.75) 0%, rgba(15,23,42,0.85) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            padding: 0 24px;
+            animation: fadeUp 1.2s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+        }
+
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== PROFILE PICTURE STYLES ===== */
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(56, 189, 248, 0.8);
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5), 0 0 0 2px rgba(255,255,255,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s;
+            background: #1e293b;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 40px -12px black;
+            border-color: #facc15;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #FFFFFF, #94a3b8);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-top: 12px;
+            font-weight: 400;
+            color: #cbd5e1;
+            backdrop-filter: blur(2px);
+            letter-spacing: 0.3px;
+        }
+
+        .tagline-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.18);
+            backdrop-filter: blur(6px);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            margin-top: 24px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 28px 60px;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.75);
+            backdrop-filter: blur(2px);
+            border-radius: 32px;
+            padding: 32px 32px;
+            margin-bottom: 48px;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid rgba(71, 85, 105, 0.5);
+            box-shadow: 0 15px 35px -15px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(45px);
+        }
+
+        .card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.01);
+            background: rgba(30, 41, 59, 0.9);
+            border-color: #38bdf870;
+            box-shadow: 0 25px 40px -16px #00000055;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.3px;
+            background: linear-gradient(120deg, #e2e8f0, #7dd3fc);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            display: inline-block;
+            border-left: 5px solid #38bdf8;
+            padding-left: 20px;
+        }
+
+        .skills-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 20px;
+        }
+        .skill-chip {
+            background: linear-gradient(145deg, #1e2a3a, #0f172a);
+            padding: 10px 22px;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            border: 1px solid #334155;
+            backdrop-filter: blur(4px);
+            letter-spacing: 0.2px;
+        }
+        .skill-chip:hover {
+            background: #38bdf8;
+            color: #0f172a;
+            border-color: #facc15;
+            transform: scale(1.05);
+            box-shadow: 0 6px 14px rgba(56,189,248,0.3);
+        }
+
+        .hobby-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+            list-style: none;
+        }
+        .hobby-list li {
+            background: #0f172a;
+            padding: 8px 20px;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            font-size: 1rem;
+            border-left: 3px solid #facc15;
+            transition: all 0.2s;
+        }
+        .hobby-list li:before {
+            content: "✨";
+            font-size: 1.2rem;
+        }
+        .hobby-list li:hover {
+            background: #1e293b;
+            transform: translateX(6px);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 20px;
+            background: #0f172a80;
+            border-radius: 28px;
+            padding: 20px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #1e293b;
+            padding: 12px 20px;
+            border-radius: 60px;
+            flex: 1;
+            min-width: 200px;
+            transition: 0.2s;
+            border: 1px solid #334155;
+        }
+        .contact-item:hover {
+            background: #2d3a52;
+            border-color: #38bdf8;
+        }
+        .contact-icon {
+            font-size: 1.8rem;
+        }
+
+        .edu-item {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 3px solid #38bdf8;
+        }
+        .edu-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #facc15;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 35px 20px;
+            background: #020617b3;
+            margin-top: 40px;
+            border-top: 1px solid #334155;
+            backdrop-filter: blur(10px);
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        .footer a {
+            color: #7dd3fc;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+            color: white;
+        }
+
+        @media (max-width: 680px) {
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            h2 {
+                font-size: 1.7rem;
+            }
+            .container {
+                padding: 16px 20px;
+            }
+            .card {
+                padding: 24px;
+            }
+            .contact-item {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+        }
+
+        .btn-cv {
+            display: inline-flex;
+            margin-top: 28px;
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid #38bdf8;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+            transition: 0.3s;
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <div class="hero-content">
+        <!-- 🔥 REPLACE "YOUR-PHOTO.jpg" WITH YOUR ACTUAL IMAGE FILE NAME 🔥 -->
+        <img class="profile-img" src="profile.jpg" alt="Nidusara Edirisinghe Profile Picture">
+        <h1>Nidusara Edirisinghe</h1>
+        <p>Photographer • Dronographer • Gamer • Storyteller</p>
+        <div class="tagline-badge">📍 based in Sri Lanka | Visual creator</div>
+        <div class="btn-cv">✦ exploring light & pixels ✦</div>
+    </div>
+</section>
+
+<div class="container">
+    <section class="card" id="about">
+        <h2>📸 About Me</h2>
+        <p style="font-size: 1.1rem; margin-top: 8px;">Hi, I'm Nidusara — a creative soul from Sri Lanka, passionate about capturing moments through photography, videography, and dronography. I'm a tech enthusiast, gamer, and student constantly learning to blend art with modern tools. I believe every frame tells a unique story, and I love bringing ideas to life.</p>
+        <p style="margin-top: 20px; background: #02061760; padding: 12px 18px; border-radius: 24px;">🎯 "Creativity is intelligence having fun." — I combine media, gaming energy, and visual aesthetics to build immersive experiences.</p>
+    </section>
+
+    <section class="card">
+        <h2>🎓 Education Journey</h2>
+        <div class="edu-item">
+            <div class="edu-title">📖 G.C.E. Advanced Level (Bio Stream)</div>
+            <p>Current student | Focus on media studies & Biology</p>
+        </div>
+        <div class="edu-item">
+            <div class="edu-title">🏫 H/Rajapaksha Central College</div>
+            <p>Grade 6 – 11 | Developed leadership & technical skills</p>
+        </div>
+        <div class="edu-item">
+            <div class="edu-title">🌱 H/Weerakatiya Primary School</div>
+            <p>Grade 1 – 5 | Foundation for creativity & curiosity</p>
+        </div>
+        <div style="margin-top: 20px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="skill-chip" style="background:#0f172a;">🎓 Self-learning</span>
+            <span class="skill-chip" style="background:#0f172a;">📚 Media Literacy</span>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>⚡ Skills & Expertise</h2>
+        <div class="skills-cloud">
+            <span class="skill-chip">📷 Photography</span>
+            <span class="skill-chip">✈️ Dronography (Aerial)</span>
+            <span class="skill-chip">🎨 Photo Editing (PS/LR)</span>
+            <span class="skill-chip">🎮 Gaming & Strategy</span>
+            <span class="skill-chip">📽️ Content Creation</span>
+            <span class="skill-chip">💻 PC Building & Tech</span>
+            <span class="skill-chip">🎬 Basic Video Editing</span>
+            <span class="skill-chip">🌐 Social Media Management</span>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: #cbd5e6;">⭐ Continuously sharpening: After Effects, Drone Cinematography, and Gaming Content</p>
+    </section>
+
+    <section class="card">
+        <h2>🎮 Hobbies & Passions</h2>
+        <ul class="hobby-list">
+            <li>Video Games (RPG / FPS)</li>
+            <li>Photography & Street Shots</li>
+            <li>Exploring Emerging Tech</li>
+            <li>Vlogging & Short Films</li>
+            <li>Travel & Nature Walks</li>
+            <li>Drone Flying</li>
+        </ul>
+        <div style="margin-top: 25px; background: #00000033; border-radius: 28px; padding: 14px 20px;">
+            <p style="font-weight: 500;">🎧 Currently playing: Mobile Legends & CS2 | Learning cinematic drone moves.</p>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>📬 Get in touch</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <div><strong>Email</strong><br>maneeshanidusara20@gmail.com</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div><strong>Phone / WhatsApp</strong><br>+94 74 327 5958</div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">🌍</div>
+                <div><strong>Location</strong><br>Sri Lanka</div>
+            </div>
+        </div>
+        <p style="margin-top: 28px; font-size: 0.9rem; text-align: center; background: #0f172a; padding: 10px; border-radius: 60px;">📌 Open for collaboration, creative projects, and photography gigs — let's create magic.</p>
+    </section>
+
+    <section class="card" style="background: linear-gradient(125deg, #1e293b, #0f172a);">
+        <h2>🖼️ Creative Snapshot</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 20px; justify-content: center;">
+            <div style="background: #020617; border-radius: 28px; padding: 16px; text-align: center; width: 160px;">
+                <div style="font-size: 3rem;">🏔️</div>
+                <p style="font-size: 0.8rem; margin-top: 8px;">Landscape shots</p>
+            </div>
+            <div style="background: #020617; border-radius: 28px; padding: 16px; text-align: center; width: 160px;">
+                <div style="font-size: 3rem;">🎮</div>
+                <p style="font-size: 0.8rem; margin-top: 8px;">Gaming streams</p>
+            </div>
+            <div style="background: #020617; border-radius: 28px; padding: 16px; text-align: center; width: 160px;">
+                <div style="font-size: 3rem;">✈️</div>
+                <p style="font-size: 0.8rem; margin-top: 8px;">Drone aerial</p>
+            </div>
+            <div style="background: #020617; border-radius: 28px; padding: 16px; text-align: center; width: 160px;">
+                <div style="font-size: 3rem;">🎬</div>
+                <p style="font-size: 0.8rem; margin-top: 8px;">Short films</p>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 18px; opacity: 0.9;">✨ Portfolio gallery coming soon — stay tuned for visual stories ✨</p>
+    </section>
+</div>
+
+<footer class="footer">
+    <p>© 2026 Nidusara Edirisinghe — All visions reserved. | Designed with 🎮 & ☕</p>
+    <p style="margin-top: 8px;">📸 Let's connect: <a href="#">Instagram</a> • <a href="#">Behance</a> • <a href="#">Discord</a> (coming soon)</p>
+</footer>
+
+<script>
+    (function() {
+        const cards = document.querySelectorAll('.card');
+        
+        function checkVisibility() {
+            const windowHeight = window.innerHeight;
+            const revealThreshold = 0.82;
+            
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const cardTop = rect.top;
+                const cardBottom = rect.bottom;
+                const isVisible = (cardTop < windowHeight * revealThreshold) && (cardBottom > 80);
+                
+                if (isVisible) {
+                    card.classList.add('show');
+                }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            checkVisibility();
+            setTimeout(checkVisibility, 200);
+        });
+        
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    checkVisibility();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+        
+        window.addEventListener('resize', () => {
+            checkVisibility();
+        });
+
+        setTimeout(() => {
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    card.classList.add('show');
+                }
+            });
+        }, 300);
+    })();
+
+    const heroDiv = document.querySelector('.hero');
+    if (heroDiv) {
+        heroDiv.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            heroDiv.style.backgroundPosition = `${x}% ${y}%`;
+        });
+        heroDiv.style.transition = 'background-position 0.2s ease-out';
+        heroDiv.style.backgroundSize = '40px, cover';
+    }
+    
+    const footerYear = document.querySelector('.footer p:first-child');
+    if (footerYear) {
+        const currentYear = new Date().getFullYear();
+        if (currentYear !== 2026) {
+            footerYear.innerHTML = `© ${currentYear} Nidusara Edirisinghe — All visions reserved. | Designed with 🎮 & ☕`;
+        }
+    }
+</script>
+
+</body>
+</html>
